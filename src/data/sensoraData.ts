@@ -15,6 +15,7 @@ export interface Mentor {
   designation: string
   institution: string
   initials: string
+  photo?: string
 }
 
 export interface SensorItem {
@@ -97,12 +98,14 @@ export const MENTORS: Mentor[] = [
     designation: 'Head – School of Design and Innovation',
     institution: 'Rathinam Technical Campus',
     initials: 'GP',
+    photo: '/assets/mentors/Gaju.jpg',
   },
   {
     name: 'Muthuswamy K',
     designation: 'Technical Competitions Head',
     institution: 'Rathinam Technical Campus',
     initials: 'MK',
+    photo: '/assets/mentors/Muthu.jpg',
   },
 ]
 

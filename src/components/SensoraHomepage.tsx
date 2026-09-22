@@ -1304,8 +1304,16 @@ export default function SensoraHomepage({ onNavigateToDashboard }: SensoraHomepa
               key={idx}
               className="p-6 rounded-2xl border border-purple-200 dark:border-slate-800 bg-gradient-to-br from-white via-purple-50/10 to-indigo-50/10 dark:from-slate-900 dark:to-slate-800/90 shadow-md flex items-center gap-5"
             >
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-600 to-indigo-700 text-white font-bold text-lg flex items-center justify-center shrink-0 shadow-md">
-                {m.initials}
+              <div className="w-16 h-16 rounded-full overflow-hidden bg-gradient-to-br from-purple-600 to-indigo-700 text-white font-bold text-lg flex items-center justify-center shrink-0 shadow-md">
+                {m.photo ? (
+                  <img
+                    src={m.photo}
+                    alt={`${m.name} portrait`}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  m.initials
+                )}
               </div>
               <div>
                 <span className="text-[10px] font-mono text-purple-600 dark:text-purple-400 uppercase font-bold">
