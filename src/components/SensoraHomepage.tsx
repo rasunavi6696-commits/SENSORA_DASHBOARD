@@ -1254,11 +1254,19 @@ export default function SensoraHomepage({ onNavigateToDashboard }: SensoraHomepa
               key={idx}
               className="p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:shadow-xl transition-all flex flex-col items-center text-center group"
             >
-              {/* Initials Avatar */}
+              {/* Photo or initials avatar */}
               <div
-                className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${member.color} flex items-center justify-center text-white font-bold text-lg shadow-md mb-4 group-hover:scale-105 transition-transform`}
+                className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${member.color} flex items-center justify-center text-white font-bold text-lg shadow-md mb-4 group-hover:scale-105 transition-transform overflow-hidden`}
               >
-                {member.initials}
+                {member.photo ? (
+                  <img
+                    src={member.photo}
+                    alt={`${member.name} portrait`}
+                    className="w-full h-full object-cover object-top"
+                  />
+                ) : (
+                  member.initials
+                )}
               </div>
               <h3 className="font-extrabold text-base text-slate-900 dark:text-white mb-1">
                 {member.name}

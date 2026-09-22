@@ -7,6 +7,7 @@ export interface TeamMember {
   initials: string
   domain: string
   color: string
+  photo?: string
 }
 
 export interface Mentor {
@@ -45,6 +46,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     initials: 'NA',
     domain: 'Power, PCB & Sensor Circuits',
     color: 'from-amber-500 to-orange-600',
+    photo: '/assets/team/Nelopher.jpg',
   },
   {
     name: 'SUDHARSAN D',
@@ -52,6 +54,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     initials: 'SD',
     domain: 'Anomaly Detection & Sensor Fusion',
     color: 'from-orange-500 to-red-600',
+    photo: '/assets/team/Sudharsan.jpg',
   },
   {
     name: 'NAVEEN V',
@@ -59,6 +62,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     initials: 'NV',
     domain: 'ESP32 Firmware & LoRa Mesh',
     color: 'from-cyan-500 to-blue-600',
+    photo: '/assets/team/Naveen-V.jpg',
   },
   {
     name: 'ALDRIN C',
@@ -66,6 +70,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     initials: 'AC',
     domain: 'Full-Stack & Gateway Services',
     color: 'from-blue-500 to-indigo-600',
+    photo: '/assets/team/Aldrin-C.jpeg',
   },
   {
     name: 'NARAINDRA J',
@@ -73,6 +78,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     initials: 'NJ',
     domain: 'Rugged Enclosure & Rover Chassis',
     color: 'from-purple-500 to-pink-600',
+    photo: '/assets/team/Naraindra-J.jpg',
   },
   {
     name: 'LARSHA SREETHI JERSIKA A',
@@ -80,6 +86,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     initials: 'LJ',
     domain: 'Geotechnical Standards & Testing',
     color: 'from-emerald-500 to-teal-600',
+    photo: '/assets/team/Larsha-Sreethi.jpg',
   },
 ]
 

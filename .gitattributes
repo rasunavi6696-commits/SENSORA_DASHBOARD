@@ -143,4 +143,7 @@
 *.iges               filter=lfs diff=lfs merge=lfs -text
 *.stl                filter=lfs diff=lfs merge=lfs -text
 *.nc                 filter=lfs diff=lfs merge=lfs -text
+
+# Keep the six deployed team portraits directly in Git so static hosting can serve them.
+public/assets/team/* -filter -diff -merge -text
 *.mat                filter=lfs diff=lfs merge=lfs -text
