@@ -100,3 +100,130 @@ body.light-theme {
 .slide-up {
   animation: slide-up 0.22s ease-out both;
 }
+
+.sensora-leaflet-map,
+.sensora-leaflet-map .leaflet-container {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  background: #34434a;
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+}
+
+.sensora-leaflet-map .leaflet-control-zoom {
+  border: 0;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.28);
+}
+
+.sensora-leaflet-map .leaflet-control-zoom a {
+  width: 28px;
+  height: 28px;
+  line-height: 26px;
+  color: #0f172a;
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(15, 23, 42, 0.16);
+  font-weight: 700;
+}
+
+.sensora-leaflet-map .leaflet-control-zoom a:hover {
+  color: #0f766e;
+  background: #ffffff;
+}
+
+.sensora-leaflet-map .leaflet-control-attribution {
+  padding: 2px 5px;
+  color: rgba(255, 255, 255, 0.82);
+  background: rgba(15, 23, 42, 0.68);
+  font-size: 8px;
+}
+
+.sensora-leaflet-map .leaflet-control-attribution a {
+  color: #a7f3d0;
+}
+
+.sensora-node-icon,
+.sensora-panel-label,
+.sensora-map-coordinate {
+  background: transparent;
+  border: 0;
+}
+
+.sensora-node-icon {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: max-content !important;
+  white-space: nowrap;
+  pointer-events: auto;
+}
+
+.sensora-node-dot {
+  display: block;
+  width: var(--node-size);
+  height: var(--node-size);
+  flex: 0 0 auto;
+  border: 2px solid rgba(255, 255, 255, 0.94);
+  border-radius: 999px;
+  background: var(--node-color);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--node-color) 42%, transparent), 0 2px 7px rgba(15, 23, 42, 0.6);
+}
+
+.sensora-node-label {
+  padding: 2px 4px;
+  border: 1px solid rgba(255, 255, 255, 0.64);
+  border-radius: 3px;
+  background: rgba(15, 23, 42, 0.78);
+  color: #ffffff !important;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.sensora-node-tooltip {
+  color: #f8fafc;
+  border: 1px solid rgba(167, 243, 208, 0.7);
+  border-radius: 5px;
+  background: rgba(15, 23, 42, 0.94);
+  box-shadow: 0 7px 20px rgba(15, 23, 42, 0.34);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.sensora-node-tooltip::before {
+  border-top-color: rgba(15, 23, 42, 0.94) !important;
+}
+
+.sensora-panel-label {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 4px 6px;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 4px;
+  background: rgba(15, 23, 42, 0.76);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.32);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.sensora-panel-label strong {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+}
+
+.sensora-panel-label span {
+  color: rgba(255, 255, 255, 0.78);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 8px;
+}
+
+.sensora-map-coordinate {
+  color: rgba(255, 255, 255, 0.88);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 8px;
+  pointer-events: none;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9);
+}
