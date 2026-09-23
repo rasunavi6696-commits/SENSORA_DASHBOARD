@@ -86,6 +86,7 @@ export default function GISMap({ nodes, selectedNode, onSelectNode, activePanel 
         attribution: 'Tiles &copy; Esri, Maxar, Earthstar Geographics, and the GIS User Community',
       }).addTo(map)
       L.control.zoom({ position: 'bottomright' }).addTo(map)
+      L.control.scale({ position: 'bottomleft', maxWidth: 110, metric: true, imperial: false }).addTo(map)
       mapRef.current = map
       overlayRef.current = L.layerGroup().addTo(map)
     }
@@ -266,6 +267,10 @@ export default function GISMap({ nodes, selectedNode, onSelectNode, activePanel 
       </div>
       <div className="relative flex-1 min-h-0">
         <div ref={mapElementRef} className="sensora-leaflet-map absolute inset-0" />
+        <div className="absolute top-3 right-3 z-[500] flex h-11 w-11 flex-col items-center justify-center rounded-full border border-white/80 bg-white/90 text-slate-900 shadow-lg pointer-events-none">
+          <span className="text-[10px] font-bold leading-none">N</span>
+          <span className="mt-0.5 text-[18px] font-black leading-3 text-orange-600">▲</span>
+        </div>
         <div className="absolute left-3 bottom-3 z-[500] rounded-md border border-white/40 bg-slate-950/75 px-2.5 py-1.5 text-[9px] font-mono text-white shadow-lg pointer-events-none">
           <div className="font-bold tracking-wider text-emerald-300">SATELLITE · JHARIA COALFIELD</div>
           <div className="mt-0.5 text-white/70">WORLD IMAGERY · UTM ZONE 44N · WGS84</div>
