@@ -60,7 +60,10 @@ export default function GISMap({ nodes, selectedNode, onSelectNode, activePanel 
   const mapElementRef = useRef<HTMLDivElement | null>(null)
   const mapRef = useRef<L.Map | null>(null)
   const overlayRef = useRef<L.LayerGroup | null>(null)
-  const [layers, setLayers] = useState<LayerConfig>({ heatmap: true, pillars: true, vectors: true, grid: true })
+  // Satellite imagery is the primary map context. The coordinate grid stays
+  // available as an optional analysis layer instead of competing with it by
+  // default.
+  const [layers, setLayers] = useState<LayerConfig>({ heatmap: true, pillars: true, vectors: true, grid: false })
 
   const RISK_COLOR: Record<string, string> = {
     LOW: colors.riskLow,
@@ -83,6 +86,8 @@ export default function GISMap({ nodes, selectedNode, onSelectNode, activePanel 
 
       L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
         maxZoom: 19,
+        opacity: 0.96,
+        crossOrigin: true,
         attribution: 'Tiles &copy; Esri, Maxar, Earthstar Geographics, and the GIS User Community',
       }).addTo(map)
       L.control.zoom({ position: 'bottomright' }).addTo(map)
@@ -104,12 +109,12 @@ export default function GISMap({ nodes, selectedNode, onSelectNode, activePanel 
     if (layers.grid) {
       for (const x of [0, 160, 320, 480, 640, 800]) {
         add(L.polyline([toLatLng(x, 0), toLatLng(x, 360)], {
-          color: '#dce7ea', opacity: 0.38, weight: 1, dashArray: '3 7', interactive: false,
+          color: '#ffffff', opacity: 0.24, weight: 1, dashArray: '3 7', interactive: false,
         }))
       }
       for (const y of [0, 90, 180, 270, 360]) {
         add(L.polyline([toLatLng(0, y), toLatLng(800, y)], {
-          color: '#dce7ea', opacity: 0.38, weight: 1, dashArray: '3 7', interactive: false,
+          color: '#ffffff', opacity: 0.24, weight: 1, dashArray: '3 7', interactive: false,
         }))
       }
       for (const [index, x] of [0, 160, 320, 480, 640, 800].entries()) {
